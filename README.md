@@ -1,2 +1,1 @@
-# vodiy_asal
-no desc
+django tutorial project
