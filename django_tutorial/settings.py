@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w@ln&tqj6jjzckc*&$zbzi2o2tdv1y*)-aslgjlr#hw042((%^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True #bug - qongiz , xatolik - DEBUG = xatolikni bartaraf qilish - debugging 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] #allowed - ruhsat berilgan disallowed - man etilgan
 
 
 # Application definition
@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 

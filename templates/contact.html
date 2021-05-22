@@ -31,6 +31,17 @@
               <div class="row">
                 <div class="col-lg-8">
                   <div class="sidebar-item contact-form">
+                    <div class="mt-5">
+                      {% if messages %}
+                        <ul>
+                      {% for message in messages %}
+                        <li><h2>{{message}}</h2></li>
+                      {% endfor %}
+
+                        </ul>
+                      {% endif %}
+
+                    </div>
                     <div class="sidebar-heading">
                       <h2>Send us a message</h2>
                     </div>
