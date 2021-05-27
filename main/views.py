@@ -11,6 +11,9 @@ def homePage(request):
 def aboutPage(request):
 	return render(request, 'about.html')
 
+def postPage(request):
+	return render(request, 'post-details.html')
+
 def contactPage(request):	
 	if request.method == 'POST':
 		name = request.POST['name']
