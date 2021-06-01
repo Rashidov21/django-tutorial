@@ -1,7 +1,15 @@
 from django.db import models
+from django.urls import reverse
 # ForeignKey = birga kop ulash
 # OneToOneField = birga bir ulash
 # ManyToManyField = Kopga kopga ulash
+
+class Category(models.Model):
+	name = models.CharField('Category name', max_length=100)
+	slug = models.SlugField('*', max_length=100, unique=True)
+
+	def __str__(self):
+		return f"{self.name}"
 
 class Tags(models.Model):
 	name = models.CharField('Tag name', max_length=100)
@@ -26,6 +34,9 @@ class Post(models.Model):
 
 	def __str__(self):
 		return f"{self.title}"
+
+	def get_absolute_url(self):
+		return reverse('main:post_detail', kwargs={'post_slug':self.slug})
 
 
 

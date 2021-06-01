@@ -1,9 +1,14 @@
 from django.contrib import admin
-from .models import Contact, Tags , Post
+from .models import Contact, Tags , Post, Category
 # Register your models here.
 
 admin.site.register(Contact)
 
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+	list_display = ['name', 'id']
+	list_display_links = ['name']
+	prepopulated_fields = {'slug':('name',)}
 
 @admin.register(Tags)
 class TagAdmin(admin.ModelAdmin):

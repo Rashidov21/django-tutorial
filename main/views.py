@@ -1,12 +1,22 @@
 from django.shortcuts import render
-from .models import Contact
+from .models import *
 from django.http import HttpResponse
 from django.contrib import messages
+
 # Create your views here.
 
 
 def homePage(request):
-	return render(request, 'index.html')
+	posts = Post.objects.all() # Post models dan hamma obyektlarni oladi
+	# get , filter , create, order_by, delete, save
+	# for post in posts:
+	# 	print(post.title)
+	context = {
+		'posts':posts
+	}
+	return render(request, 'index.html',context)
+
+
 
 def aboutPage(request):
 	return render(request, 'about.html')
@@ -31,3 +41,7 @@ def contactPage(request):
 
 		
 	return render(request, 'contact.html')
+
+def postDetailPage(request, post_slug):
+	post = Post.objects.get(slug=post_slug)
+	return render(request, 'post-details.html', {'post':post})
