@@ -161,8 +161,9 @@
                           <div class="col-6">
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">Beauty</a>,</li>
-                              <li><a href="#">Nature</a></li>
+                              {% for tag in post.tag.all %}
+                              <li><a href="#">{{tag.name}}</a>,</li>
+                              {% endfor %}
                             </ul>
                           </div>
                           <div class="col-6">

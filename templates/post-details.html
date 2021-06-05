@@ -78,6 +78,7 @@
                               <li><i class="fa fa-share-alt"></i></li>
                               <li><a href="#">Facebook</a>,</li>
                               <li><a href="#"> Twitter</a></li>
+                              <li><a href="#"> Post views :{{post.views}}</a></li>
                             </ul>
                           </div>
                         </div>
@@ -138,7 +139,13 @@
                       <h2>Your comment</h2>
                     </div>
                     <div class="content">
-                      <form id="comment" action="#" method="post">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                        {{form}}
+
+                        <input type="submit" value="Create comment">
+                      </form>
+                      <!-- <form id="comment" action="#" method="post">
                         <div class="row">
                           <div class="col-md-6 col-sm-12">
                             <fieldset>
@@ -166,7 +173,7 @@
                             </fieldset>
                           </div>
                         </div>
-                      </form>
+                      </form> -->
                     </div>
                   </div>
                 </div>

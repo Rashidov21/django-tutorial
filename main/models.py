@@ -26,11 +26,18 @@ class Post(models.Model):
 	author = models.CharField('Author', max_length=80)
 	image = models.ImageField('Poster', upload_to='posters/')
 	body = models.TextField('Body')
+	views = models.PositiveIntegerField('Korildi', default=0)
 	published = models.DateTimeField(auto_now_add=True)
 	# on_delete=models.PROTECT => Ximoyalanadi  
 	# on_delete=models.CASCADE => Kaskad , bir-biriga bogliq
 	# on_delete=models.SET_NULL => korsatilmagan - aloqasiz
-	tag = models.ForeignKey(Tags, on_delete=models.CASCADE)
+	# on_delete=models.DO_NOTHING => hech qanday amal bajarmedi
+	# on_delete=models.SET_DEFAULT => doimiy korsatilgan amal boyicha ulanish
+
+	category = models.ForeignKey(Category,
+		on_delete=models.CASCADE,
+		related_name='posts')
+	tag = models.ManyToManyField(Tags)
 
 	def __str__(self):
 		return f"{self.title}"
@@ -49,3 +56,19 @@ class Contact(models.Model):
 
 	def __str__(self):
 		return f"Contacted > {self.name}"
+
+class Comment(models.Model):
+	post = models.ForeignKey(Post,
+	on_delete=models.CASCADE,
+	related_name='comments')
+	name = models.CharField('Ismingiz', max_length=50)
+	email = models.EmailField('Email')
+	subject = models.CharField('Mavzu', max_length=150)
+	comment = models.TextField('Xabar matni')
+
+	def __str__(self):
+		return f"{self.name}"
+
+	class Meta:
+		verbose_name = 'Muhokama'
+		verbose_name_plural = 'Muhokamalar'

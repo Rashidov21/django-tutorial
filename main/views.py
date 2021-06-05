@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 from django.contrib import messages
+from .forms import AddCommentForm
 
 # Create your views here.
 
@@ -44,4 +45,17 @@ def contactPage(request):
 
 def postDetailPage(request, post_slug):
 	post = Post.objects.get(slug=post_slug)
-	return render(request, 'post-details.html', {'post':post})
+	if request.method == 'POST':
+		form = AddCommentForm(request.POST)
+		if form.is_valid():
+			f = form.save(commit=False)
+			f.post = post
+			f.save()
+	else:
+		form = AddCommentForm()
+	post.views += 1
+	context = {
+		'post':post,
+		'form':form
+	}
+	return render(request, 'post-details.html', context)
