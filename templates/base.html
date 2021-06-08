@@ -23,13 +23,13 @@
 
   </head>
 <script>
+  if ( window.history.replaceState ) {
+ window.history.replaceState( null, null, window.location.href );
+}
 // function ResetForm() {
-//   if ( window.history.replaceState ) {
-//  window.history.replaceState( null, null, window.location.href );
-// }
 // }
 </script>
-  <body onload="document.querySelector('#form').reset()">
+  <body>
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">

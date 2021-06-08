@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
 from django.http import HttpResponse
 from django.contrib import messages
@@ -59,3 +59,17 @@ def postDetailPage(request, post_slug):
 		'form':form
 	}
 	return render(request, 'post-details.html', context)
+
+def categoryDetailPage(request, category_id):
+	category = get_object_or_404(Category, id=category_id)
+	print(category)
+	post = Post.objects.filter(category=category)
+	print(post)
+	print(type(post))
+	return  render(request, 'post_list.html',{'post':post})
+
+def tagDetailPage(request, tag_slug):
+	tag = get_object_or_404(Tags, slug=tag_slug)
+	print(tag)
+	post = Post.objects.filter(tag=tag)
+	return  render(request, 'post_list.html', {'post':post})

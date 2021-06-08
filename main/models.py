@@ -11,12 +11,20 @@ class Category(models.Model):
 	def __str__(self):
 		return f"{self.name}"
 
+	def get_absolute_url(self):
+		return reverse('main:category_detail', kwargs={'category_id':self.id})
+
+
 class Tags(models.Model):
 	name = models.CharField('Tag name', max_length=100)
 	slug = models.SlugField('*', max_length=100, unique=True)
 
 	def __str__(self):
 		return f"{self.name}"
+
+	def get_absolute_url(self):
+		return reverse('main:tag_detail', kwargs={'tag_slug':self.slug})
+
 
 
 
