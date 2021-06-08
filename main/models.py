@@ -61,6 +61,9 @@ class Comment(models.Model):
 	post = models.ForeignKey(Post,
 	on_delete=models.CASCADE,
 	related_name='comments')
+	date = models.DateTimeField('Bildirilgan sana',
+		auto_now_add=True,
+		null=True)
 	name = models.CharField('Ismingiz', max_length=50)
 	email = models.EmailField('Email')
 	subject = models.CharField('Mavzu', max_length=150)
