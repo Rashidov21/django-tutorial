@@ -94,10 +94,6 @@
                     <div class="content">
                       <ul>
                   {% for commentator in post.comments.all %}                       
-                       
-
-
-                       
                         <li>
                           <div class="author-thumb">
                            {% if commentator.image %}
@@ -124,7 +120,7 @@
                       <h2>Your comment</h2>
                     </div>
                     <div class="content">
-                      <form action="" method="POST">
+                      <form action="" id="form" method="POST">
                         {% csrf_token %}
                         {{form}}
 
