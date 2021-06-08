@@ -60,12 +60,10 @@ def postDetailPage(request, post_slug):
 	}
 	return render(request, 'post-details.html', context)
 
-def categoryDetailPage(request, category_id):
-	category = get_object_or_404(Category, id=category_id)
+def categoryDetailPage(request, category_slug):
+	category = get_object_or_404(Category, slug=category_slug)
 	print(category)
 	post = Post.objects.filter(category=category)
-	print(post)
-	print(type(post))
 	return  render(request, 'post_list.html',{'post':post})
 
 def tagDetailPage(request, tag_slug):

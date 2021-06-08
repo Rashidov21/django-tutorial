@@ -12,7 +12,7 @@ class Category(models.Model):
 		return f"{self.name}"
 
 	def get_absolute_url(self):
-		return reverse('main:category_detail', kwargs={'category_id':self.id})
+		return reverse('main:category_detail', kwargs={'category_slug':self.slug})
 
 
 class Tags(models.Model):
