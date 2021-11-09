@@ -8,9 +8,15 @@
     <title>My first web site in Django</title>
 </head>
 <body>
-<center>
-    <h1>Hello world</h1>
-</center>
+
+   <ul>
+       {% for object in students %}
+       <li style="padding:10px;border:solid 2px red;">
+           {{object.first_name}} : {{object.age}} :  {{object.adress}}
+       </li>
+       {% endfor %}
+   </ul>
+
 
 </body>
 </html>
