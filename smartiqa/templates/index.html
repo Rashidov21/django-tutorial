@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+	<main>
+		<div class="main-content-1 pt-5 text-center">
+			<h1 class="pt-5 mt-3"><img src="/static/img/logo2.png" alt="" style="width: 100px;"></h1>
+			<br>
+			<br>
+			<h1 style="font-size: 60px;font-weight: 600;">SMARTIQA</h1>
+			<h1 style="font-size: 40px;font-weight: 600;">IT Блог | Программирование и QA</h1>
+			<br>
+			<br>
+        	<h6><i class="fab fa-wikipedia-w"></i>
+	      	<i class="fab fa-youtube"></i>
+	       	<i class="fab fa-telegram-plane"></i></h6>
+	       	<br>
+	       	<button class="btn-subscribe" style="color: #000;border: 2px solid #000;padding: 12px 60px;">Подписаться</button>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<section class="section-main-2" id="blog2">
+		<div class="container"><!-- CONTAINER -->
+		    <div class="main2-title-block">
+			    <h1>Полезные статьи</h1>
+			    <p>Публикуем актуальные новости из мира разработчиков и QA, образовательные статьи и переводы</p>
+		    </div>
+			   <div class="buttons">
+					<a href="#">
+						<button style="background:black;  color:white;">Все</button>
+					</a>
+                    {% for tag in tags %}
+                    <a href="#">
+						<button>{{ tag.name }}</button>
+					</a>
+                    {% endfor %}
+
+
+
+		     </div>
+		     <div class="container-fluid">
+		     	   <div class="row pt-5 mt-4">
+		     	<div class="col-12 col-sm-12 col-md-12  col-lg-4 col-xl-4 mb-5">
+		     		<div class="cols-bg-imgs cols-bg-imgs-1">
+		     			<div>
+		     				<span>PROGRAMMING API PYTHON</span>
+		     			</div>
+		     		</div>
+		     		<div class="describtions-main">
+		     			<h4>
+		     				<b>Библиотека Requests: эффективные и простые HTTP-запросы в Python</b>
+		     			</h4>
+                        <p class="mt-3">
+                        	Отправление запросов и получение ответов от сайтов напрямую и через API. Основные свойства и методы библиотеки Requests. Простое управление web-приложениями с помощью Python.
+                        </p>
+                        <small>14.03.2021</small>
+		     		</div>
+		     	</div>
+		     	<div class="col-12 col-sm-12 col-md-12  col-lg-4 col-xl-4 mb-5">
+		     		<div class="cols-bg-imgs cols-bg-imgs-2">
+		     			<div>
+		     				<span>PROGRAMMING NEURAL NETWORK</span>
+		     			</div>
+		     		</div>
+		     		<div class="describtions-main">
+		     			<h5 style="font-size:17px;">
+		     				<b>Знакомимся с инструментом для написания нейронных сетей. Встречайте - PyTorch.</b>
+		     			</h5>
+                        <p class="mt-3" style="line-height:18px;">
+                        	Рассмотрим основы фреймворка PyTorch, на примерах научимся создавать тензоры, обращаться к ним по индексам, делать срезы, работать с осями, считать разные метрики и находить ошибку. Все это позволит нам написать свою нейронную сеть в следующем уроке.
+                        </p>
+                        <small>05.12.2020</small>
+		     		</div>	
+		     	</div>
+		     	<div class="col-12 col-sm-12 col-md-12  col-lg-4 col-xl-4 mb-5">
+		     		<div class="cols-bg-imgs cols-bg-imgs-3"> 
+		     			 <div>
+		     			 	<span>PROGRAMMING API PYTHON</span>
+		     			 </div>
+		     		</div>
+		     		<div class="describtions-main">
+		     			<h5 style="font-size:17px;">
+		     				<b>Генеративно-состязательные модели, или как сделать из нейросети художника.</b>
+		     			</h5>
+                        <p class="mt-3" style="line-height:18px;">
+                        	В статье рассказывается о принципе работы GAN-моделей и методах их обучения.
+                        </p>
+                        <small>07.11.2020</small>
+		     		</div>
+		     	</div>
+		     	<div class="col-12 col-sm-12 col-md-12  col-lg-4 col-xl-4 mb-5">
+		     		<div class="cols-bg-imgs cols-bg-imgs-4">
+		     			<div>
+		     				<span>PROGRAMMING  PYTHON</span>
+		     			</div>
+		     		</div>
+		     		<div class="describtions-main">
+		     			<h4>
+		     				<b>Менеджер пакетов pip: разбираемся с установкой дополнительных библиотек в Python</b>
+		     			</h4>
+                        <p class="mt-3">
+                        	Установка и обновление менеджера пакетов PIP. Команды по работе с pip, группировка модулей и массовая загрузка библиотек под конкретный проект.
+                        </p>
+                        <small>05.11.2020</small>
+		     		</div>
+		     	</div>
+		     	<div class="col-12 col-sm-12 col-md-12  col-lg-4 col-xl-4 mb-5">
+		     		<div class="cols-bg-imgs cols-bg-imgs-5">
+		     			<div>
+		     				<span>PROGRAMMING NEURAL NETWORK</span>
+		     			</div>
+		     		</div>
+		     		<div class="describtions-main">
+		     			<h5 style="font-size:20px;">
+		     				<b>Откуда нейросеть знает, что на картинке котик? Все, что вы хотели знать о сверточных нейросетях</b>
+		     			</h5>
+                        <p class="mt-3">
+                        	В статье рассказывается о принципе работы сверточных нейронных сетей
+                        </p>
+                        <small>03.11.2020</small>
+		     		</div>	
+		     	</div>
+		     	<div class="col-12 col-sm-12 col-md-12  col-lg-4 col-xl-4 mb-5">
+		     		<div class="cols-bg-imgs cols-bg-imgs-6"> 
+		     			 <div>
+		     			 	<span>QA</span>
+		     			 </div>
+		     		</div>
+		     		<div class="describtions-main">
+		     			<h5 style="font-size:17px;">
+		     				<b>ACC-методика составления тест-планов от компании Google</b>
+		     			</h5>
+                        <p class="mt-3" style="line-height:18px;">
+                        	Принципы составления грамотного тест-плана в минимальные сроки. ACC-анализ, применяемый в компании Google и его элементы: атрибуты, компоненты, возможности.
+                        </p>
+                        <small>18.10.2020</small>
+		     		</div>
+		     	</div>
+		     </div>
+		   </div>
+		   <div class="load_more_btn-block">
+		   	  <button>ЗАГРУЗИТ ЕШЕ</button>
+		   </div>
+		</div>
+	</section>
+	<section class="section-main-3" id="blog3">
+		<div class="container">
+			<div class="section_3title-block">
+			   <h1>Курсы 2021</h1>
+			   <p>В этом году выпускаем три новых бесплатных курса:</p>
+		    </div>
+		    <div class="container-fluid" style="margin-top:80px;"><!-- container fluid -->
+		    	<div class="row" style="justify-content: center;"><!-- col-1 -->
+		    		<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+		    			<div class="section_2_cols-bgs section_2_cols-bgs1">
+		    				
+		    			</div>
+		    			<div class="describtions-main2">
+		    				<h3>
+		    					<b>Курс "Программирование на Python"</b>
+		    				</h3>
+		    				<ul>
+								<li>Уровень: Начальный</li>
+								<li>Количество уроков: 6</li>
+								<li>Стоимость: Бесплатно</li>
+								<li>Релиз: 2020</li>
+							</ul>
+							<button style="background:black; color: white;">Оглавление</button>
+							<button>Первый урок</button>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+		    			<div class="section_2_cols-bgs section_2_cols-bgs2">
+		    				
+		    			</div>
+		    			<div class="describtions-main2">
+		    				<h3>
+		    					<b>Курс "Автоматизация тестирования Web-приложений"</b>
+		    				</h3>
+		    				<ul>
+								<li>Работаем с фреймворками Selenium и PyTest</li>
+								<li id="li"style="opacity: 0;">Количество уроков: 6</li>
+								<li style="opacity: 0;">Стоимость: Бесплатно</li>
+							</ul>
+								 <button style="background:black; color: white;">Оглавление</button>
+							     <button>Первый урок</button>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+		    			<div class="section_2_cols-bgs section_2_cols-bgs3">
+		    				
+		    			</div>
+		    			<div class="describtions-main2">
+		    				<h3>
+		    					<b>Курс "Работа с Git"</b>
+		    				</h3>
+		    				<ul>
+								<li>Знакомимся с невероятно мощным и полезным в разработке программ</li>
+								<li> инструментом - системой контроля версий Git.</li>
+								<li style="opacity: 0;">Стоимость: Бесплатно</li>
+								<li style="opacity: 0;">Стоимость: Бесплатно</li>
+							</ul>
+								 <button style="background:black; color: white;">Оглавление</button>
+							     <button>Первый урок</button>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+	</section>
+	<section class="section-main-4" id="blog4">
+		<div class="container">
+			<div class="section-4_title-block">
+				<h1>
+					<b>Задачник по Python 2021</b>
+				</h1>
+				<p>Теоретическая справка, вопросы и задачи с решениями по 16ти темам</p>
+			</div>
+			<div class="container-fluid" style="margin-top: 50px;">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-5 pt-5">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12 cols-bgs-section-1"></div>
+								<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12">
+									<span style="color: gray;">TUESDAY, SEPTEMBER 8</span>
+									<h5 class="mt-3" style="font-size:16px;">
+										<b>Задачник. Программирование на Python.</b>
+									</h5>
+									<p class="mt-4 text-secondary">
+										Сборник задач с решениями по программированию на языке Python. Темы: Целые числа, Числа с плавающей точкой, Словари, Кортежи, Множества, Списки, Строки, Функции, Циклы for и while, Условные выражения if else, Импорт, Модули и пакеты, ООП Классы и объекты, Файлы, Итераторы.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-5 pt-5">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12 cols-bgs-section-2"></div>
+								<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12 ">
+									<span style="color: gray;">TUESDAY, SEPTEMBER 8</span>
+									<h5 class="mt-3" style="font-size:16px;">
+										<b>Задачник по Python. Тема 1. Целые числа.</b>
+									</h5>
+									<p class="mt-4 text-secondary">
+										Решаем задачи и отвечаем на вопросы по теме "Целые числа": работаем с типом данных int
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pt-5">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12 cols-bgs-section-3"></div>
+								<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12">
+									<span style="color: gray;">THURSDAY, SEPTEMBER 10</span>
+									<h5 class="mt-3" style="font-size:16px;">
+										<b>Задачник по Python. Тема 2. Числа с плавающей точкой</b>
+									</h5>
+									<p class="mt-4 text-secondary">
+										Решаем задачи и отвечаем на вопросы по теме "Числа с плавающей точкой": работаем с типом данных float
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="load_more_btn-block">
+				<button>Еше</button>
+			</div>
+			<div class="main-bottom-title">
+				<h2>
+					<b>Мы можем оповещать вас о важных статьях и <br class="br">новостях.</b>
+				</h2>
+			</div>
+		 	<div class="text-center pt-4 pb-4">
+				  <a href="#">
+					  <button class="subscribe-btn-bottom">Подписаться</button>
+				  </a>
+			</div>
+			<div class="hr-line">
+				
+			</div>
+			<div class="text-center main-contact-bottom" >
+					<a href="#">
+						<i class="fab fa-vk mr-3"></i>
+					</a>
+					<a href="#">
+						<i class="fab fa-youtube mr-3"></i>
+					</a>
+					<a href="#">
+						<i class="fab fa-telegram"></i>
+					</a>
+			  </div>
+		</div>
+	</section>
+</main>
+
+{% endblock %}
