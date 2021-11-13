@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import  Tag
+from .models import  Tag, Post
 # from django.views.generic.base import (
 # TemplateView, View
 # )
@@ -9,6 +9,8 @@ from .models import  Tag
 #     template_name = "index.html"
 def homeView(request):
     tags = Tag.objects.all()
-    return render(request, "index.html" , {"tags":tags})
+    posts = Post.objects.all()
+    context = {"tags":tags, "posts":posts}
+    return render(request, "index.html", context)
 
 

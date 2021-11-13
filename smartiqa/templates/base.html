@@ -1,98 +1,80 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>IT Блог</title>
-	<link rel="icon" href="/static/img/logo.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	<link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-	<header>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django BLog</title>
+      <link rel="short icon" href="/static/img/counseling.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+ <body>
+ <header>
+     <nav class="navbar has-background-warning has-text-link" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
 
-		<nav class="navbar">
-			<div class="logo">
-				<img src="/static/img/logo.png" alt="">
-			</div>
-			<div class="links">
-				<ul>
-					<li>
-						<a href="#" style="color: #909090">Главная</a>
-					</li>
-					<li>
-						<a href="#blog2">Блог</a>
-					</li>
-					<li class="li-dropdown">
-						<a href="#">Курсы</a>
-						<div class="dropdown-content">
-							<a href="courses/python.html">Курс. Программирование на Python.</a>
-							<a href="#">Курс. Автоматизация тестирования.</a>
-							<a href="courses/git.html">Курс. Работа с Git.</a>
-						</div>
-					</li>
-					<li>
-						<a href="#blog4">Задачник</a>
-					</li>
-					<li>
-						<a href="courses/index2.html">О проекте</a>
-					</li>
-				</ul>
-			</div>
-	        <div class="social-media-icons">
-	        	<a href="#"><i class="fab fa-wikipedia-w"></i></a>
-	        	<a href="#"><i class="fab fa-youtube"></i></a>
-	        	<a href="#"><i class="fab fa-telegram-plane"></i></a>
-	        	<button class="btn-subscribe">Подписаться</button>
-	        </div>
-		</nav>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-	</header>
-	<div class="social-responsive-icons" id="app">
-		<div class="img" v-if="icons"><a href="#"><img src="/static/img/logo3.svg" alt=""></a></div>
-		<div class="img" v-if="icons"><a href="#"><img src="/static/img/logo4.svg" alt=""></a></div>
-		<div class="img" v-if="icons"><a href="#"><img src="/static/img/logo5.svg" alt=""></a></div>
-		<div class="img" v-if="icons"><a href="#"><img src="/static/img/logo6.svg" alt=""></a></div>
-		<div class="img" v-if="icons"><a href="#"><img src="/static/img/logo7.svg" alt=""></a></div>
-		<span>
-			<i class="far fa-comment-lines" v-on:click="show" v-if="comment" style="background-color: darkcyan;color: #fff;"></i>
-			<i class="fas fa-times" v-on:click="hide" v-if="times"></i>
-		</span>
-	</div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
 
+      <a class="navbar-item">
+        Documentation
+      </a>
 
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+ </header>
 {% block content %}
 
 {% endblock %}
 
-
-
-<footer class="bg-dark pt-5 pb-3">
-	<div class="container">
-		<div class="footer-navs-block text-center text-light">
-			<ul style="list-style: none;">
-				<li style="display: inline-block;margin: 10px;">Главная</li>
-				<li style="display: inline-block;margin: 10px;">Блог</li>
-				<li style="display: inline-block;margin: 10px;">Курсы</li>
-				<li style="display: inline-block;margin: 10px;">Партнерские курсы</li>
-				<li style="display: inline-block;margin: 10px;"> Задачник</li>
-				<li style="display: inline-block;margin: 10px;">О нас</li>
-				<li style="display: inline-block;margin: 10px;">Политика конфиденциальности</li>
-			</ul>
-		</div>
-		<div class="text-center mt-5 ">
-			<p style="color:gray;">
-				© All Rights Reserved. 2018 - 2020. Smartiqa Blog.<br class="br">
-				info@smartiqa.ru
-			</p>
-		</div>
-	</div>
-</footer>
-</body>
-
-<script src="/static/js/vue.js"></script>
-<script src="/static/js/app.js"></script>
+ <script src="/static/js/main.js"></script>
+  </body>
 </html>
