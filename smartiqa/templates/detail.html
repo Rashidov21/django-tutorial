@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                     <div class="card">
+                         <div class="card-image">
+                             <figure class="image">
+                                 <img src="{{ object.image.url}}" width="100%" height="auto" >
+                             </figure>
+
+                         </div>
+                     </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                          <div class="card-content">
+                            <div class="content">
+                                <h2>{{ object.title }}</h2>
+                                {{object.description}} <a>@bulmaio</a>.
+                              <a href="#">#css</a> <a href="#">#responsive</a>
+                              <br>
+                              <time datetime="2016-1-1">{{ object.published}}</time>
+                            </div>
+                          </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

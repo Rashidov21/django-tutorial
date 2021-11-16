@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="section has-background-link-light" id="ban">
 
-</section>
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Django Blog Posts
+          {{ objects.name}} Posts
       </h1>
     <div class="columns">
-        {% for post in posts %}
+        {% for post in objects %}
             <div class="column is-one-third">
                 <div class="card">
                       <div class="card-image">
