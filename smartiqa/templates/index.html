@@ -10,8 +10,8 @@
         Django Blog Posts
       </h1>
     <div class="columns">
-        {% for post in posts %}
-            <div class="column is-one-third">
+        {% for post in posts|slice:"3" %}
+            <div class="column">
                 <div class="card">
                       <div class="card-image">
                           <a href="{{ post.get_absolute_url }}">

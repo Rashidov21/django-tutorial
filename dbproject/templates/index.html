@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DB project</title>
+</head>
+<body>
+<div style="background-color:orange; padding:20px;">
+    <ul>
+        <li>Student name :{{students.name}}</li>
+    </ul>
+    <ul>
+        <li>Room : {{rooms.number}}</li>
+    </ul>
+    <ul>
+        {% for teach in teachers %}
+        <li>{{teach.name}}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
