@@ -62,6 +62,12 @@ class Machine(models.Model):
     name = models.CharField(max_length=50)
     detals = models.ManyToManyField(Detal)
 
+    class Meta:
+        verbose_name = "Mashina"
+        verbose_name_plural = "Mashinalar"
+        ordering = ["name"]
+        # order_with_respect_to = "name"
+
     def __str__(self):
         return f"{self.name}"
 

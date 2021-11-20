@@ -8,7 +8,23 @@
     <title>DB project</title>
 </head>
 <body>
+
 <div style="background-color:orange; padding:20px;">
+    <center>
+        <form action="" method="POST" id="form">
+            {% csrf_token %}
+            <input type="text" name="myValue">
+            <button type="submit">Create</button>
+        </form>
+    </center>
+    <center>
+        <h3>{{one}}</h3>
+    </center>
+    <ul>
+        {% for m in withFilter %}
+            <li>Nomi :{{m.name}} ID: {{m.id}}</li>
+        {% endfor %}
+    </ul>
     <ul>
         <li>Student name :{{students.name}}</li>
     </ul>
@@ -21,5 +37,10 @@
         {% endfor %}
     </ul>
 </div>
+<script>
+    document.body.onload = function(){
+        document.getElementById("form").reset();
+    }
+</script>
 </body>
 </html>

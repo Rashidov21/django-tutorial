@@ -25,3 +25,6 @@ def categoryDetail(request, category_slug):
     context = {"objects": post}
     return render(request, "categories.html", context)
 
+
+def contactView(request):
+    return render(request, "contact.html")
