@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
  <body>
+ <script>
+       if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+  }
+ </script>
  <header>
      <nav class="navbar has-background-warning has-text-link" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -67,7 +72,12 @@
 {% block content %}
 
 {% endblock %}
-
+ <script>
+     window.onload = function (){
+         let form = document.getElementById("form");
+         form.reset()
+     }
+ </script>
  <script src="/static/js/main.js"></script>
   </body>
 </html>

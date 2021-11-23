@@ -39,7 +39,9 @@
       <h1 class="is-size-2">Tags</h1>
       <div class="tags has-text-centered" id="tags">
            {% for tag in tags %}
-            <button class="button is-link m-2">{{ tag.name }}</button>
+               <a href="{{ tag.get_absolute_url }}">
+                <button class="button is-link m-2">{{ tag.name }}</button>
+               </a>
            {% endfor %}
       </div>
   </div>

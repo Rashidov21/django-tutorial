@@ -8,4 +8,5 @@ urlpatterns = [
     path("contact/", views.contactView, name="contact"),
     path("detail/<slug:post_slug>", views.postDetail, name='post_detail'),
     path("category/<slug:category_slug>/", views.categoryDetail, name='category_detail'),
+    path("tag/<slug:tag_slug>/", views.tagDetail, name='tag_detail'),
 ]

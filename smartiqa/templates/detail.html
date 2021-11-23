@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+     <script>
+       if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+  }
+       document.body.onload = function (){
+           document.getElementById("form").reset()
+       }
+ </script>
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -13,12 +21,39 @@
 
                          </div>
                      </div>
+                    <div class="card p-5 mt-2">
+                        <form action="" method="post" id="form">
+                            {% csrf_token %}
+                            {{ form }}
+                            <input type="submit" class="button is-primary m-2" value="Fikr bildirish">
+                        </form>
+                    </div>
+                {% for comment in object.post_comments.all|slice:"5" %}
+                        <div class="card mt-2">
+                        <div class="card-content">
+                            <div class="title">{{ comment.name}}</div>
+                            {{ comment.message }}
+                        </div>
+                    </div>
+                    <br>
+                {% endfor %}
+
                 </div>
                 <div class="column">
                     <div class="card">
                           <div class="card-content">
                             <div class="content">
                                 <h2>{{ object.title }}</h2>
+                                  <div class="container has-text-centered">
+                                  <h1 class="is-size-2">Tags</h1>
+                                  <div class="tags has-text-centered" id="tags">
+                                       {% for tag in tags %}
+                                           <a href="{{ tag.get_absolute_url }}">
+                                            <button class="button is-link m-2">{{ tag.name }}</button>
+                                           </a>
+                                       {% endfor %}
+                                  </div>
+                              </div>
                                 {{object.description}} <a>@bulmaio</a>.
                               <a href="#">#css</a> <a href="#">#responsive</a>
                               <br>
