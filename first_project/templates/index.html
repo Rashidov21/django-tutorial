@@ -10,7 +10,22 @@
 
 <body>
     <center>
-        <h2>Home Page</h2>
+        <h2>
+            <a href="/">
+                Home Page
+            </a>
+        </h2>
+        <h2>
+            {# {{}} {% load static %} #}
+            <a href="{% url 'main:contactPage' %}">
+                Contact
+            </a>
+        </h2>
+        <h2>
+            <a href="/about">
+                About
+            </a>
+        </h2>
     </center>
 </body>
 
