@@ -24,15 +24,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
+                        {% for category in categories|slice:'5' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">{{category.name}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
+                        {% endfor %}
+
+
                     </ul>
                 </div>
             </div>
@@ -45,6 +43,8 @@
                     <span class="h5 text-danger">WebDesignBlog</span> 2022 all right reserved</span>
         </div>
     </footer>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
 </body>
 
 </html>
