@@ -1,0 +1,58 @@
+ {% extends 'base.html' %} {% load static %}{% block content %}
+<main>
+    <div class="container mt-3 mb-5 p-2">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div class="text-left">
+                    <div class="display-5">
+                        WebDesignBlog
+                    </div>
+                    <p class="h5 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ullam omnis aut vero a. Maiores?</p>
+                    <div class="mt-5">
+                        <a href="#" class="btn btn-info">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <figure class="figure">
+                    <img src="/static/src/web-design.png" class="figure-img img-fluid rounded" alt="None">
+                </figure>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3 mb-5 p-2">
+        {% for post in object_list %}
+        <div class="post mt-3">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <figure class="figure">
+                        <img src="{{post.poster.url}}" class="figure-img img-fluid rounded" alt="None">
+                    </figure>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <div class="h2">{{post.title}}</div>
+
+                    <p>{{post.body|truncatewords:'15'}}</p>
+
+                    <div class="ratings">
+
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <br>
+                    <a href="#" class="btn btn-success">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+</main> {% endblock%}
