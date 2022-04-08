@@ -10,4 +10,6 @@ class HomeView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+
+# views  
     
