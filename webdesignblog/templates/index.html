@@ -24,35 +24,90 @@
             </div>
         </div>
     </div>
-    <div class="container mt-3 mb-5 p-2">
-        {% for post in object_list %}
-        <div class="post mt-3">
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    <figure class="figure">
-                        <img src="{{post.poster.url}}" class="figure-img img-fluid rounded" alt="None">
-                    </figure>
-                </div>
-                <div class="col-sm-12 col-md-8">
-                    <div class="h2">{{post.title}}</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div class="container mt-3 mb-5 p-2">
+                    {% for post in object_list %}
+                    <div class="post mt-3">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4">
+                                <figure class="figure">
+                                    <img src="{{post.poster.url}}" class="figure-img img-fluid rounded" alt="None">
+                                </figure>
+                            </div>
+                            <div class="col-sm-12 col-md-8">
+                                <div class="h2">{{post.title}}</div>
 
-                    <p>{{post.body|truncatewords:'15'}}</p>
+                                <p>{{post.body|truncatewords:'15'}}</p>
 
-                    <div class="ratings">
-
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                                <div class="ratings">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <br>
+                                <a href="{% url 'blog:detail' post.slug %}" class="btn btn-success">
+                                Read More
+                            </a>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <a href="{% url 'blog:detail' post.slug %}" class="btn btn-success">
-                        Read More
-                    </a>
+                    {% endfor%}
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <div class="card p-2">
+                    <form action="#" onkeyup="inlineSearch(this.elements[0].value)" class="mb-2">
+                        <input type="search" class="form-control" placeholder="Write something..">
+                    </form>
+                    <ul class="list-group" id="responseList">
+
+                        {% for p in object_list|slice:"3" %}
+                        <li class="list-group-item">
+                            <a href="#">{{p.title}}</a>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
                 </div>
             </div>
         </div>
-        {% endfor%}
     </div>
+    <script>
+        function inlineSearch(query) {
+            let data = JSON.stringify(query)
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let res = JSON.parse(this.responseText)
+                    console.dir(res)
+                    let list = document.querySelector("#responseList")
+                    let elem = "<span>"
+                    for (let i = 0; i < res.object_list.length; i++) {
+                        let li = `
+                        <li class="list-group-item">
+                            <a href="/detail/${res.object_list[i].slug}">${res.object_list[i].title}</a>
+                        </li>
+                            `
+                        elem += li
+                    }
+                    elem += '</span>'
+
+                    list.innerHTML = elem
+
+
+
+                } else {
+                    console.log("error")
+                }
+            };
+            let url = "/search/"
+            xhttp.open("GET", url + `?data=${data}`, true);
+            xhttp.send();
+
+        }
+    </script>
 </main> {% endblock%}

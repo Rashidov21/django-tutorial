@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">WebDesignBlog</a>
+                <a class="navbar-brand" href="{% url 'blog:home' %}">WebDesignBlog</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -24,11 +24,25 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
-                        {% for category in categories|slice:'5' %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Categories
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                {% for category in categories %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'blog:category_list' category.slug %}">
+                                        {{category.name}}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{category.name}}</a>
                         </li>
-                        {% endfor %}
+
 
 
                     </ul>
@@ -43,7 +57,7 @@
                     <span class="h5 text-danger">WebDesignBlog</span> 2022 all right reserved</span>
         </div>
     </footer>
-    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/app.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
 </body>
 
