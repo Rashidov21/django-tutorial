@@ -25,4 +25,17 @@ class Post(models.Model):
         verbose_name_plural = "Posts"
         
         # this models is   
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='post_comments')
+    name = models.CharField(max_length=50)
+    message = models.TextField()
     
+    def __str__(self):
+        return f"Comment for post/{self.post.id}"
+    
+    class Meta:
+        ordering = ["-id"]
+        verbose_name_plural = "Comments"

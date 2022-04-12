@@ -8,14 +8,13 @@
                     <figure class="figure">
                         <img src="{{post.poster.url}}" class="figure-img img-fluid rounded" alt="None">
                     </figure>
-                    <h5>Post Rating</h5>
+                    <h5>Post Rating :
+                        <br> <span class="display-3" id="like">{{post.rating}}</span>
+                    </h5>
                     <div class="ratings">
-
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <button onclick="likePost({{post.id}})" class="btn btn-primary">
+                            <i class="fas fa-thumbs-up"></i> Like
+                        </button>
                     </div>
                     <br>
 
@@ -28,8 +27,77 @@
 
                 </div>
             </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <center class="h4">
+                        Post Comments
+                    </center>
+                    <br> {% for comment in post.post_comments.all|slice:'3' %}
+                    <div class="card p-2 mt-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="w-50" src="/static/src/master.png" alt="">
+                            </div>
+                            <div class="col-6">
+                                <h5>{{comment.name}}</h5>
+                                {{comment.message}}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <center>
+                    {% if messages %} {% for message in messages %}
+                    <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %} role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %} {% endif %}
+
+
+                </center>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card p-2">
+                        <form action="" method="post">
+                            <input type="text" name="name" placeholder="Name" class="form-control" required> {% csrf_token %}
+                            <br>
+                            <textarea name="message" placeholder="Comment..." class="form-control" id="" cols="30" rows="5" required></textarea>
+                            <br>
+                            <input type="submit" class="btn btn-success">
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
+    <script>
+        function likePost(post_id) {
+            console.log(post_id)
+            let data = JSON.stringify({
+                post_id: post_id
+            })
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let res = JSON.parse(this.responseText)
+                    if (res["success"]) {
+                        let likeBlock = document.querySelector("#like");
+                        console.log(res)
+                        likeBlock.innerHTML = res["likes"]
+                    } else {
+                        alert("error")
+                    }
+                } else {
+                    console.log("NOT RESPONSE")
+                }
+            };
+            let url = "/like/"
+            xhttp.open("GET", url + `?data=${data}`, true);
+            xhttp.send();
+
+        }
+    </script>
 </main>
 {% endblock%}
