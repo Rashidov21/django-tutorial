@@ -1,0 +1,18 @@
+.my-container {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.col {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.div {
+    margin-top: 15px;
+}
+
+.card:hover {
+    transition: all 0.3s;
+    transform: translateY(-5px);
+}
