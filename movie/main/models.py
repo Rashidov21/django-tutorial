@@ -53,11 +53,11 @@ class Movie(models.Model):
     poster = models.ImageField(upload_to="posters/")
     description = models.TextField()
     year = models.PositiveIntegerField(default=0, blank=False)
-    genre = models.ManyToManyField(Genre)
+    genre = models.ManyToManyField(Genre, related_name='movies')
     category = models.ForeignKey(
         Category,
         on_delete=models.PROTECT,
-        related_name='categories')
+        related_name='movies')
     director =models.CharField(max_length=60)
     actors = models.ManyToManyField(Actors)
     rating = models.FloatField()

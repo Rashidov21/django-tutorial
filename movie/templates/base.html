@@ -16,47 +16,53 @@
     <header>
         <nav class="orange darken-2 my-container">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Movie</a>
+                <a href="/" class="brand-logo">Movie</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
+
                     <li>
-                        <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                            Category
-                            <i class="material-icons right">arrow_drop_down</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-trigger" href="#!" data-target="dropdown2">
-                            Genres
-                            <i class="material-icons right">arrow_drop_down</i>
+                        <a class="waves-effect waves-light modal-trigger" href="#search">
+                            <i class="material-icons">search</i>
                         </a>
                     </li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">About</a></li>
+
+
                 </ul>
-                <!-- Dropdown Structure -->
-                <ul id="dropdown1" class="dropdown-content">
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#!">three</a></li>
-                </ul>
-                <ul id="dropdown2" class="dropdown-content">
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#!">three</a></li>
-                </ul>
+
             </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Sass</a></li>
-            <li><a href="#">Components</a></li>
-            <li><a href="#">Javascript</a></li>
-            <li><a href="#">Mobile</a></li>
+            <li>
+                <a class="waves-effect waves-light modal-trigger" href="#search">
+                    <i class="material-icons">search</i> Search
+                </a>
+            </li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </header>
+    <!-- Modal Structure -->
+    <div id="search" class="modal">
+        <div class="modal-content">
+            <h4>Search movie</h4>
+
+            <div class="nav-wrapper">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" placeholder="Write something.." required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
     {% block content %} {% endblock %}
 
     <footer class="page-footer orange darken-2">
