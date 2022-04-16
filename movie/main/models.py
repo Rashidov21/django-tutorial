@@ -34,6 +34,7 @@ class Actors(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="actor_images/")
     age = models.PositiveIntegerField(default=0)
+    info = models.TextField()
     country = models.CharField(max_length=100)
 
     class Meta:
@@ -59,7 +60,7 @@ class Movie(models.Model):
         on_delete=models.PROTECT,
         related_name='movies')
     director =models.CharField(max_length=60)
-    actors = models.ManyToManyField(Actors)
+    actors = models.ManyToManyField(Actors, related_name='movies')
     rating = models.FloatField()
     
     class Meta:

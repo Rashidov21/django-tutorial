@@ -30,4 +30,8 @@ class GenreListView(ListView):
         self.genre = get_object_or_404(Genre, slug=self.kwargs['slug'])
         return Movie.objects.filter(genre=self.genre)
     
+class ActorDetailView(DetailView):
+    model = Actors
+    template_name = 'main/actor_detail.html'
+    
     

@@ -46,7 +46,7 @@
                         <span class="content">
                             <b>Actors</b> : {% for act in movie.actors.all %}
                             <div class="text-center" style="display: inline-block;">
-                                <a href="#">
+                                <a href="{% url 'main:actor_detail' act.id %}">
                                     <span>
                                         <img width="100" src="{{ act.image.url}}" class="circle responsive-img">
                                     </span>
