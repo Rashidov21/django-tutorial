@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div id="main" class="container">
+
+
+    <div id="movie">
+        <div itemscope itemtype="https://schema.org/Movie">
+
+
+            <meta itemprop="name" content="Робот по имени Чаппи">
+            <meta itemprop="url" content="https://kinobase.org/film/3301-robot-po-imeni-chappi">
+            <meta itemprop="dateCreated" content="2022-05-02T14:04:11+03:00">
+            <meta itemprop="copyrightYear" content="2015">
+
+            <h1>{{object.title}}</h1>
+
+            <h4 class="alternative_title" itemprop="alternativeHeadline">Film</h4>
+
+
+            <div class="row">
+                <div class="col-md-9">
+
+                    <div class="data clearfix">
+                        <div class="poster-data">
+                            <div class="poster">
+                                <img src="{{object.poster.url}}" itemprop="image" class="img-responsive">
+
+                                <button class="favorite" data-movie-id="3301" title="Добавить в избранное"></button>
+
+                                <span class="label label-danger">Лицензия</span>
+                            </div>
+
+                            <div id="rating-block">
+                                <span itemprop="aggregateRating" itemscope
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <meta itemprop="ratingValue" content="8.6">
+                                    <meta itemprop="worstRating" content="0">
+                                    <meta itemprop="bestRating" content="10">
+                                    <meta itemprop="ratingCount" content="414">
+                                </span>
+                                <input type="hidden" id="rating" value="8.6">
+                                <div id="rating-votes">
+                                    Оценка: 8.6 (414 голосов)
+                                </div>
+                                <div id="rating-success">
+                                    <span id="rating-text">Ваша оценка: 0</span>
+                                    <span id="remove-rating" class="glyphicon glyphicon-remove"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="list-unstyled details">
+                            <li><b>Год:</b> <a href="/films/2015">2015</a></li>
+
+                            <li><b>Страна:</b> <a href="/films/usa" rel="nofollow">США</a>, <a href="/films/zaf"
+                                    rel="nofollow">ЮАР</a></li>
+
+                            <li>
+                                <b>Жанр:</b> 
+                                   
+                                   {% for genre in object.genres.all %}
+                                    <a href="#" rel="nofollow">
+                                            <span itemprop="genre">{{genre.name}}<span>
+                                        </a>
+                                   {% endfor %}
+                                       , 
+                                 </li>
+
+                            <li><b>Слоган:</b>{{object.short_title}}</li>
+
+                            {% comment %} <li><b>Режиссер:</b> <span itemprop="director" itemscope
+                                    itemtype="https://schema.org/Person"><a itemprop="url" href="/name/1774"
+                                        rel="nofollow"><span itemprop="name">Нил Бломкамп</span></a></span></li>
+
+                            <li><b>Сценарий:</b> <a href="/name/1774" rel="nofollow">Нил Бломкамп</a>, <a
+                                    href="/name/1776" rel="nofollow">Тэрри Татчелл</a></li>
+
+                            <li><b>Продюсер:</b> <span itemprop="producer" itemscope
+                                    itemtype="https://schema.org/Person"><a itemprop="url" href="/name/1774"
+                                        rel="nofollow"><span itemprop="name">Нил Бломкамп</span></a></span>, <span
+                                    itemprop="producer" itemscope itemtype="https://schema.org/Person"><a itemprop="url"
+                                        href="/name/844" rel="nofollow"><span itemprop="name">Саймон
+                                            Кинберг</span></a></span>, <span itemprop="producer" itemscope
+                                    itemtype="https://schema.org/Person"><a itemprop="url" href="/name/1770"
+                                        rel="nofollow"><span itemprop="name">Джеймс Битонти</span></a></span></li> {% endcomment %}
+
+                   
+
+                            <li>
+                               <b>Актеры:</b> 
+                                
+                                {% for actor in object.actors.all %}
+                                   <a itemprop="url" href="/name/1117" rel="nofollow">
+                                    <span itemprop="name">{{actor.name}}</span>
+                                    </a> 
+                                {% endfor %}
+                                    
+                                
+                                , 
+                           </li>
+
+
+                            <li><b>Качество:</b> {{object.quality}}</li>
+                     
+                            <li><b>Продолжительность:</b> <span itemprop="duration">{{object.duration}}</span></li>
+
+                            <li><b>Рейтинг IMDb:</b> {{object.rating}}</li>
+                        </ul>
+
+                        <div class="body" itemprop="description">{{object.description}}</div>
+
+                    </div>
+
+
+                    <div id="watch_block">
+
+                        <ul class="nav nav-tabs" id="tab-options">
+                            <li><a href="#online" data-toggle="tab">Смотреть онлайн</a></li>
+                            <li><a href="#trailer" data-toggle="tab">Трейлер</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane" id="online">
+                                <div id="videoplayer_content">
+                                    <div id="videoplayer"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="trailer"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-left">
+
+                                    <button class="btn-icon btn-fav" title="Добавить в избранное">В избранное</button>
+
+                                </div>
+
+                                <div class="pull-right">
+
+                                    <div class="dropdown dropdown-filter" id="dropdown-player">
+                                        <button class="btn-own dropdown-toggle change-player" data-toggle="dropdown"
+                                            title="Выбрать плеер">
+                                            <span id="change-player-text">Выбрать плеер</span> <span
+                                                class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" id="set_new_player">Новый плеер</a></li>
+                                            <li><a href="#" id="set_old_player">Старый плеер</a></li>
+                                            <li><a href="#" id="set_flash_player">Флеш плеер</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div id="comments">
+                        <div class="comments-title" id="comments-count">8 комментариев</div>
+
+
+                        <form action="/comments/add" id="comment_form" method="post">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="author_name" name="author_name"
+                                            maxlength="50" value="" placeholder="Гость">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <textarea class="form-control" id="comment" rows="3"></textarea>
+                            </div>
+
+                            <button class="btn btn-default btn-post" id="add_comment">Добавить</button>
+                        </form>
+
+
+                        <div id="comments-entries">
+                            <div class="media new_comment" data-comment-id="" style="display:none;">
+                                <div class="media-left">
+                                    <img class="media-object img-circle" src="" loading="lazy"
+                                        style="width: 50px; height: 50px;">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-heading"><b></b> <span></span></div>
+                                    <p class="text"></p>
+                                    <p class="small"><a href="javascript:void(0);" data-id="" class="text-muted remove"
+                                            title="Удалить">Удалить</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+
+                    <div class="sidebar-telegram">
+                        Сайт может быть заблокирован Роскомнадзором.<br>Подписывайтесь на наш телеграм канал <a
+                            href="https://t.me/kinobasecc" target="_blank">@kinobasecc</a>, чтобы быть в курсе нового
+                        адреса.
+                    </div>
+
+                    <div id="ad020611"></div>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var MOVIE_ID = 3301;
+        var MOVIE_URL = "robot-po-imeni-chappi";
+        var MOVIE_TYPE = "films";
+        var MOVIE_TRAILER = "https://www.youtube.com/embed/YQ1CtGUgCbQ";
+        var MOVIE_IS_COMING = 0;
+
+        var COMMENTS_PAGES = 1;
+
+        var PLAYER_VERSION = "378";
+        var PLAYER_CUID = "8217bb4e7fa0541e0f5e04fea764ab91";
+
+        var VOD_HASH = "CqMq_D9AbDk6cmGJG7PC7A";
+        var VOD_TIME = "1651769534";
+
+        var IDENTIFIER = "2fN60lW5anRN4EYTAaAs";
+
+        var USER_DV = 0;
+        var BR_DIV_ID = "ad110695";
+        var BN_DIV_ID = "ad020611";
+    </script>
+
+
+    <script src="https://st.kinobase.org/static/player/378/hls.js"></script>
+    <script src="https://st.kinobase.org/static/player/378/playerjs.js?v=1651321185538"></script>
+    <script src="https://st.kinobase.org/static/player/378/uppod.js?v=1651321185538"></script>
+    <script src="https://st.kinobase.org/static/js/swfobject.js"></script>
+
+    <script src="https://st.kinobase.org/static/js/bowser.js?v=1651321185538"></script>
+    <script src="https://st.kinobase.org/static/js/movie.js?v=1651321185538"></script>
+
+    {% endblock content %}
