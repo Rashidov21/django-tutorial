@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="my-container">
+    <div class="row">
+        <div class="row">
+            <div class="col">
+                <div class="left">
+                    <h4>Latest movies</h4>
+                </div>
+            </div>
+        </div>
+        <!-- DETAIL CONTENT  -->
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="row">
+                    <div class="col s12 m3" style="margin: 0; padding:0;">
+                        <img class="responsive-img" width="100%" src="{{object.poster.url}}" alt="">
+                    </div>
+                    <div class="col s12 m1"></div>
+                    <div class="col s12 m8">
+                        <h3>{{object.title}}</h3>
+                        <p class="content">{{object.description}}</p>
+                        <p class="content">
+                            <b>Genres</b> : {% for genre in movie.genre.all %}
+                            <b><a href="#" class="">{{genre.name}}</a></b> {% endfor %}
+                        </p>
+                        <p class="content">
+                            <b>Category</b> :
+                            <b><a href="#" class="">{{movie.category}}</a></b>
+                        </p>
+                        <p class="content">
+                            <b>Director</b> :
+                            <b><a href="#" class="">{{movie.director}}</a></b>
+                        </p>
+                        <p class="content">
+                            <b>Rating <i class="material-icons">star</i></b> :
+                            <b><a href="#" class="">
+                                
+                               <big> {{movie.rating}}</big>
+                            </a></b>
+                        </p>
+                        <p class="content">
+                            <b>Year</b> :
+                            <b><a href="#" class="">{{movie.year}}</a></b>
+                        </p>
+                        <span class="content">
+                            <b>Actors</b> : {% for act in movie.actors.all %}
+                            <div class="text-center" style="display: inline-block;">
+                                <a href="{% url 'main:actor_detail' act.id %}">
+                                    <span>
+                                        <img width="100" src="{{ act.image.url}}" class="circle responsive-img">
+                                    </span>
+                        </a>
+                        <br>
+                        <span>{{act.name}}</span>
+                    </div> {% endfor %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

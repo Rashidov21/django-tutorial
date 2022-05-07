@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% load static %}
+<main>
+    {% block content %}
+    <section>
+
+
+        <div class="div"></div>
+
+        <div class="my-container">
+            <div class="row">
+                <div class="row">
+                    <div class="col">
+                        <div class="left">
+                            <h4>Latest movies</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m9 l9">
+                        {% for movie in object_list %}
+                        <div class="col s12 m4 l4 ">
+
+                            <div class="card">
+                                <div class="col s12 m8 l10">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <a href="{% url 'main:detail' movie.slug %}">
+                                                <img class="responsive-img" src="{{movie.poster.url}}">
+                                                <span class="card-title">{{movie.title}}</span>
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- SIDEBAR  -->
+                    {% include 'sidebar.html' %}
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                        <li class="active"><a href="#!">1</a></li>
+                        <li class="waves-effect"><a href="#!">2</a></li>
+                        <li class="waves-effect"><a href="#!">3</a></li>
+                        <li class="waves-effect"><a href="#!">4</a></li>
+                        <li class="waves-effect"><a href="#!">5</a></li>
+                        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                    </ul>
+                </center>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+</main>
