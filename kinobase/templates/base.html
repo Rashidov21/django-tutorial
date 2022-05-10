@@ -26,22 +26,7 @@
 <script src="/static/static/js/bootstrap.js"></script>
 <script src="/static/static/js/master.js"></script>
 
-<script type="text/javascript">
-var IMAGES_URL = "https://st.kinobase.org";
-var STATIC_URL = "https://st.kinobase.org";
-var STATIC_VERSION = "1651321185538";
-var CURRENT_USER_ID = 0;
-$(document).ready(function() {
-    $.ajax({
-        dataType: "json",
-        url: "/user_data",
-        data: { page: "index" },
-        success: function(data) {
-            $("#ad110695").html(data.branding);
-        }
-    });
-});
-</script>
+
 
 <div id="ad110695"></div>
 
@@ -80,8 +65,8 @@ $(document).ready(function() {
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login" class="login">Вход</a></li>
-                <li><a href="/registration" class="register">Регистрация</a></li>
+                <li><a href="{% url 'movie:login' %}" class="modal login">Вход</a></li>
+                <li><a href="registration.html" class="register">Регистрация</a></li>
             </ul>
 
         </div>
@@ -98,106 +83,6 @@ $(document).ready(function() {
 </div>
 
 
-<div class="modal" id="account_modal"
- tabindex="-1" role="dialog" aria-labelledby="true" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
-            <h4 class="modal-title">Вход</h4>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div id="modal_login_content" style="display:none;">
-                        <div class="alert alert-danger" style="display:none;"></div>
-                        <form action="/login" id="modal_login_form" method="post" role="form">
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="modal_login_email" value="" placeholder="Электронная почта">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" id="modal_login_password" placeholder="Пароль">
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-default">Войти</button>
-                            </div>
-                        </form>
-
-                        <div style="margin-top:30px;">
-                            <p><a href="/recover" class="recover">Забыли пароль?</a></p>
-                            <p><a href="/registration" class="register">Зарегистрироваться</a></p>
-                        </div>
-                    </div>
-
-                    <div id="modal_recover_content" style="display:none;">
-                        <div class="alert alert-success" style="display:none;"></div>
-                        <div class="alert alert-danger" style="display:none;"></div>
-                        <form action="/recover" id="modal_recover_form" method="post" role="form">
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="modal_recover_email" value="" placeholder="Электронная почта">
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-default">Отправить</button>
-                            </div>
-                        </form>
-
-                        <div style="margin-top:30px;">
-                            <p><a href="/login" class="login">Войти</a></p>
-                        </div>
-                    </div>
-
-                    <div id="modal_register_content" style="display:none;">
-                        <div class="alert alert-success" style="display:none;"></div>
-                        <div class="alert alert-danger" style="display:none;"></div>
-                        <form action="/registration" id="modal_register_form" method="post" role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" id="modal_register_name" value="" placeholder="Имя пользователя">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="modal_register_email" value="" placeholder="Электронная почта">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" id="modal_register_password" placeholder="Пароль">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password_confirmation" id="modal_register_password_confirmation" placeholder="Подтвердите пароль">
-                            </div>
-
-                            <div class="form-group">
-                                Captcha
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-default">Зарегистрироваться</button>
-                            </div>
-                        </form>
-
-                        <div style="margin-top:30px;">
-                            <p><a href="/login" class="login">Войти</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="registration-social-login">
-                        <a class="btn-own btn-vk" href="javascript:void(0);" onclick="ulogin.vkontakte('https://kinobase.org/ulogin');">
-                            <span class="icon-vkontakte"></span>  Войти через Вконтакте</a>
-                        <a class="btn-own btn-ok" href="javascript:void(0);" onclick="ulogin.odnoklassniki('https://kinobase.org/ulogin');">
-                            <span class="icon-odnoklassniki"></span>  Войти через Одноклассники</a>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 
 
 <script type="text/javascript">

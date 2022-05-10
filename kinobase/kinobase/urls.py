@@ -4,9 +4,16 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 
+# from django.contrib.auth.views import LoginView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include('movie.urls', namespace='movie'))
+    path("", include('movie.urls', namespace='movie')),
+
+    # Login 
+    # path("login/", LoginView.as_view(
+    #     template_name=''
+    # ),)
 ]
 
 if settings.DEBUG:
