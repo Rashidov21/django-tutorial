@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.db import models
 
 # Create your models here.
@@ -13,6 +14,9 @@ class Category(models.Model):
 
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
+    
+    def get_absolute_url(self):        
+        return reverse('movie:category_list', kwargs={'slug': self.slug})
 
     def __str__(self):
         """Unicode representation of Category."""
@@ -61,12 +65,14 @@ class Movie(models.Model):
     title = models.CharField("Movie title", max_length=250)
     slug = models.SlugField(max_length=100, unique=True)
     description =models.TextField()
-    short_description = models.CharField("Short title", max_length=550)
+    short_description = models.CharField("Short title", max_length=550, blank=True)
     likes = models.PositiveIntegerField(default=0)
     dislikes = models.PositiveIntegerField(default=0)
     rating = models.FloatField(default=0)
-    quality = models.CharField("Quality", max_length=50)
-    duration = models.CharField("Duration", max_length=50)
+    quality = models.CharField("Quality", max_length=50, blank=True)
+    duration = models.CharField("Duration", max_length=50, blank=True)
+    year = models.CharField(max_length=5, default="2022")
+    country = models.CharField(max_length=50, default="USA")
    
 
     

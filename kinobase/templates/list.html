@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div id="main" class="container">
+
+
+    <div id="movies">
+
+        <div class="clearfix">
+            <div class="pull-left">
+                <a href="/tv" class="h3 catalog-title">Телепередачи</a>
+            </div>
+
+            <div class="dropdown-filters">
+                <div class="dropdown dropdown-filter">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <span class="dropdown-u">Сортировать</span> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="/tv" rel="nofollow">Новинки</a></li>
+                        <li><a href="/tv?sort=year" rel="nofollow">Год</a></li>
+                        <li><a href="/tv?sort=viewed_day" rel="nofollow">Популярные за сутки</a></li>
+                        <li><a href="/tv?sort=viewed_week" rel="nofollow">Популярные за неделю</a></li>
+                        <li><a href="/tv?sort=viewed_month" rel="nofollow">Популярные за месяц</a></li>
+                        <li><a href="/tv?sort=viewed_all" rel="nofollow">Популярные за все время</a></li>
+                        <li><a href="/tv?sort=rating" rel="nofollow">Рейтинг пользователей</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown dropdown-filter">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <span class="dropdown-u">Жанр</span> <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu checkbox-dropdown">
+                        <ul>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="biography"> Биография </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="documental"> Документальный </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="comedy"> Комедия </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="adventure"> Приключения </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="sport"> Спорт </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="tv"> ТВ Передача </label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-default btn-clear">Сбросить</button> <button
+                            class="btn btn-default btn-save">Применить</button>
+                    </div>
+                </div>
+
+                <div class="dropdown dropdown-filter">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <span class="dropdown-u">Страна</span> <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu checkbox-dropdown">
+                        <ul>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="gbr"> Великобритания </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="isr"> Израиль </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="can"> Канада </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="rus"> Россия </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="usa"> США </label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-default btn-clear">Сбросить</button> <button
+                            class="btn btn-default btn-save">Применить</button>
+                    </div>
+                </div>
+
+                <div class="dropdown dropdown-filter">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <span class="dropdown-u">Год</span> <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu checkbox-dropdown">
+                        <ul>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2022"> 2022 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2021"> 2021 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2020"> 2020 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2019"> 2019 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2018"> 2018 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2017"> 2017 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2016"> 2016 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2015"> 2015 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2014"> 2014 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2013"> 2013 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2010"> 2010 </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="2005"> 2005 </label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-default btn-clear">Сбросить</button> <button
+                            class="btn btn-default btn-save">Применить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row items">
+            
+            {% for movie in page_obj %}              
+              
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 item">
+                <a href="{% url 'movie:detail' movie.slug %}">
+                    <img src="{{movie.poster.url}}"
+                        class="img-responsive" loading="lazy" alt="{{movie.title}}"
+                        title="{{movie.title}}">
+                </a>
+
+                <button class="favorite" data-movie-id="179849" title="Добавить в избранное"></button>
+
+                <span class="label label-danger">2 сезон 10 серия</span>
+
+                <div class="info">
+                    <div class="title">
+                        <a href="{% url 'movie:detail' movie.slug %}" class="link" alt="{{movie.title}}"
+                            title="{{movie.title}}">{{movie.title}}</a>
+                    </div>
+                    <div class="desc">2021, HDRip</div>
+                </div>
+            </div>
+            
+        {% endfor %}
+        </div>
+
+        <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+            </li>
+           
+        {% endif %}
+        
+        {% for page in page_obj.paginator.page_range %}
+        {% if page == page_obj.number %}
+            <li class="active">
+                <a href="?page={{page}}">{{page}}</a>
+            </li>
+        {% else %}
+            <li class="">
+                <a href="?page={{page}}">{{page}}</a>
+            </li>
+        {% endif %}
+        {% endfor %}
+            
+        {% if page_obj.has_next %}
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+            </li>
+        {% endif %}
+           
+        </ul>
+    </div>
+
+    {% endblock content %}
