@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a9e70a1-8e8b-4c9e-a1aa-8dc9d72b3430" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/context_pro.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/migrations/0002_actors_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/migrations/0003_auto_20220414_1839.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/migrations/0004_auto_20220416_1834.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/main/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/actor_images/278192366_7308184892586038_5153825476845580475_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/actor_images/avataaars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/actor_images/avataaars_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/actor_images/avataaars_2_8P2HuZs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/actor_images/avataaars_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/posters/26bc06cabaf7331b0b1d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/posters/3dec9062ad40aaaada3b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/posters/489bc075fcde2f25ee89.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/posters/49ccf4807fd6cb1d342b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/posters/710825b1cbf0a2acf2ee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/media/posters/e552918afc9913f5d1eb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/movie/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/movie/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/movie/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/movie/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/movie/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/staticfiles/css/materialize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/staticfiles/css/materialize.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/staticfiles/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/staticfiles/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/staticfiles/js/materialize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/staticfiles/js/materialize.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/templates/main/actor_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/templates/main/movie_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/templates/main/movie_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/templates/sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie/templates/test.html" beforeDir="false" />
-    </list>
+    <list default="true" id="3a9e70a1-8e8b-4c9e-a1aa-8dc9d72b3430" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +51,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
