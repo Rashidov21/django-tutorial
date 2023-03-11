@@ -1,0 +1,34 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav py-2 bg-dark">
+            <ul class="nav px-5">
+                <li class="nav-item"><a href="/" class="nav-link fw-bold">Home</a></li>
+                <li class="nav-item"><a href="{% url 'main:quruts' %}" class="nav-link fw-bold">Qurut's</a></li>
+                <li class="nav-item"><a href="#" class="nav-link fw-bold">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    {% block content %}
+    <!-- Page main content  -->
+    {% endblock %}
+    
+    <footer>
+        
+    </footer>
+    {% bootstrap_javascript %}
+</body>
+</html>

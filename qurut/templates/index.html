@@ -1,0 +1,19 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+    <main class="container">
+        <center class="my-5">
+            <h2>Hello</h2>
+        </center>
+        <div class="row">
+            <div class="col-3">
+                {% include 'components/categories.html' %}
+            </div>
+            <div class="col-9">
+                <center>
+                    <h2>Hello - col-9</h2>
+                </center>
+            </div>
+        </div>
+    </main>
+{% endblock %}
