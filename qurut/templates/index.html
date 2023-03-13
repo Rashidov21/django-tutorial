@@ -10,9 +10,20 @@
                 {% include 'components/categories.html' %}
             </div>
             <div class="col-9">
-                <center>
-                    <h2>Hello - col-9</h2>
-                </center>
+                <div class="p-3 my-5">
+                    <ul>
+                        {% for category in categories %}
+                        <li>{{category.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="p-3 my-5">
+                    <ul>
+                        {% for product in products %}
+                        <li>{{product.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
