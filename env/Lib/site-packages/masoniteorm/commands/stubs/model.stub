@@ -1,0 +1,9 @@
+""" __CLASS__ Model """
+
+from masoniteorm.models import Model
+
+
+class __CLASS__(Model):
+    """__CLASS__ Model"""
+
+    pass

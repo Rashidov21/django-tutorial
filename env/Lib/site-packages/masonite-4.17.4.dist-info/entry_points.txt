@@ -1,0 +1,2 @@
+[console_scripts]
+project = masonite.commands.Entry:application.run
