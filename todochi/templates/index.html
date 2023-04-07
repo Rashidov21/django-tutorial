@@ -1,48 +1,25 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content  %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <!--For Page-->
 <main class="my-5">
-    <div class="container mx-auto">
-        <div class="todos p-5 shadow-lg rounded">
-            <h2>Todos</h2>
-            <div class="list-group w-auto">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                  <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-                  <div class="d-flex gap-2 w-100 justify-content-between">
-                    <div>
-                      <h6 class="mb-0">List group item heading</h6>
-                      <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                    </div>
-                    <span>
-                        <a href="#"><i class="fa-solid fa-check"></i></a>
-                    </span>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                  <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-                  <div class="d-flex gap-2 w-100 justify-content-between">
-                    <div>
-                      <h6 class="mb-0">Another title here</h6>
-                      <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
-                    </div>
-                    <small class="opacity-50 text-nowrap">3d</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                  <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-                  <div class="d-flex gap-2 w-100 justify-content-between">
-                    <div>
-                      <h6 class="mb-0">Third heading</h6>
-                      <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                    </div>
-                    <small class="opacity-50 text-nowrap">1w</small>
-                  </div>
-                </a>
-              </div>
+  <div class="container mx-auto">
+    <div class="todos p-5 shadow-lg rounded">
+      <h2>Todos</h2>
+      <div class="card shadow-lg p-3 rounded d-flex justify-content-between">
+        <div class="todo-info">
+          <h3>todo tiitle</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
+            minima rerum cumque ipsum obcaecati culpa!
+          </p>
         </div>
+        <div class="todo-action">
+            <a href="#" class="btn btn-ouline">
+
+            </a>
+        </div>
+      </div>
     </div>
+  </div>
 </main>
 
-{% endblock content  %}
+{% endblock content %}
