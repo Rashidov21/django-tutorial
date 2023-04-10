@@ -3,19 +3,59 @@
 <main class="my-5">
   <div class="container mx-auto">
     <div class="todos p-5 shadow-lg rounded">
-      <h2>Todos</h2>
-      <div class="card shadow-lg p-3 rounded d-flex justify-content-between">
+      <div class="d-flex justify-content-between">
+        <h2>Todos</h2>
+        <div>
+          <a href="{% url 'todo:add' %}" class="btn btn-outline-primary">Add new Todo</a>
+        </div>
+      </div>
+      {% for todo in doned_false %}
+      
+      <div class="card shadow-lg p-3 my-3 rounded d-flex justify-content-between
+      {% if todo.status == 'low' %}
+        bg-primary
+      {% endif %}
+      {% if todo.status == 'medium' %}
+        bg-warning
+      {% endif %}
+      {% if todo.status == 'high' %}
+        bg-danger
+      {% endif %}">
         <div class="todo-info">
-          <h3>todo tiitle</h3>
+          <a href="{% url 'todo:detail' todo.id %}">
+            <h4>{{todo.title}}</h4>
+          </a>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
-            minima rerum cumque ipsum obcaecati culpa!
+            {{todo.description.html|safe}}
           </p>
         </div>
         <div class="todo-action">
-          
+          <a href="{% url 'todo:done' todo.id %}" class="btn btn-outline-dark">Done</a>
+          <a href="{% url 'todo:delete' todo.id %}" class="btn btn-outline-dark">Delete</a>
         </div>
       </div>
+      {% endfor %}
+    </div>
+    <div class="todos p-5 shadow-lg rounded">
+      <h2>Doned</h2>
+ 
+      {% for todo in doned_true %}
+      
+      <div class="card shadow-lg p-3 my-3 rounded d-flex justify-content-between">
+        <div class="todo-info">
+          <a href="{% url 'todo:detail' todo.id %}">
+            <h4>{{todo.title}}</h4>
+          </a>
+          <p>
+            {{todo.description.html|safe}}
+          </p>
+        </div>
+        <div class="todo-action">
+          <a href="{% url 'todo:done' todo.id %}" class="btn btn-outline-dark">Done</a>
+          <a href="{% url 'todo:delete' todo.id %}" class="btn btn-outline-dark">Delete</a>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </main>

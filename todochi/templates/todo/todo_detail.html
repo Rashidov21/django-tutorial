@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block content %}
+<main class="my-5">
+    <div class="container mx-auto">
+        <div class="card shadow-lg p-3 rounded d-flex justify-content-between">
+            <div class="todo-info">
+              <h4>{{todo.title}}</h4>
+              <p>
+                {{todo.description.html|safe}}
+              </p>
+            </div>
+            <div class="todo-action">
+              <a href="{% url 'todo:done' todo.id %}" class="btn btn-outline-dark">Done</a>
+              <a href="{% url 'todo:delete' todo.id %}" class="btn btn-outline-dark">Delete</a>
+              <a href="{% url 'todo:update' todo.id %}" class="btn btn-outline-dark">Update</a>
+            </div>
+          </div>
+    </div> 
+</main>
+
+{% endblock content %}

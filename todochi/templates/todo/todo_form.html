@@ -3,13 +3,34 @@
 {% block content %}
 <main class="my-5">
     <div class="container mx-auto">
-        <form action="" class="w-50" method="POST">
+      
+      <div class="d-flex justify-content-center">
+        {% if form_status == 'add' %}
+        <div class="form">
+          <h2>Add new Todo Form</h2>
+          <form action="" class="w-100" method="POST">
             {% csrf_token %}
             {{form}}
             <div class="my-3">
-              <input type="submit" class="btn btn-outline-success">
+              <input type="submit" value="Add" class="btn btn-outline-success">
+              <a href="/" class="btn btn-outline-success">Back to Home</a>
             </div>
           </form>
+        </div>
+        {% else %}
+        <div class="form">
+          <h2>Update Todo Form</h2>
+          <form action="" class="w-100" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div class="my-3">
+              <input type="submit" value="Update" class="btn btn-outline-success">
+              <a href="/" class="btn btn-outline-success">Back to Home</a>
+            </div>
+          </form>
+        </div>
+        {% endif %}
+      </div>
     </div> 
 </main>
 
