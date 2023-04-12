@@ -14,6 +14,8 @@ from .models import Todo
 class TodoView(ListView):
     model = Todo
     template_name = 'index.html'
+    # object_list or ;
+    context_object_name = 'todos'
     
     # def get_queryset(self):
     #     queryset = Todo.objects.filter(done=False)
