@@ -4,7 +4,7 @@
   <div class="container mx-auto">
     <div class="todos p-5 shadow-lg rounded">
       <div class="d-flex justify-content-between">
-        <h2>Todos</h2>
+        <h2>Todos for :{{request.user.username}}</h2>
         <div>
           <a href="{% url 'todo:add' %}" class="btn btn-outline-primary">Add new Todo</a>
         </div>
