@@ -1,0 +1,23 @@
+{% extends '../base.html' %} 
+{% load static %} 
+{% block content %}
+<!--For Page-->
+<main class="my-5">
+  <div class="container mx-auto ">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 mx-auto">
+            <div class="todos p-5 shadow-lg rounded">
+                <h4>Profile form</h4>
+                <form action="" method="POST"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form}}
+                    <br>
+                    <input type="submit" value="Login" class="btn btn-outline-success">
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+
+{% endblock content %}

@@ -26,7 +26,7 @@
       
             {% if request.user.is_authenticated %}
             <li class="nav-item">
-                <a href="#" class="nav-link">{{request.user.username}}</a>
+                <a href="{% url 'accounts:profile' %}" class="nav-link">{{request.user.username}}</a>
             </li>
             <li class="nav-item">
                 <a href="{% url 'accounts:logout' %}" class="nav-link">Logout</a>

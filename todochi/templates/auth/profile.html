@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% load static %} 
+{% block content %}
+<main>
+    <section class="my-3">
+        <div class="container mx-auto">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card p-3 shadow">
+                        <div class="m-2">
+                            <img width="150" src="{{object.profile.image.url}}" alt="">
+                        </div>
+                        <h3>{{object.username}}</h3>
+                        <p>{{object.profile.bio}}</p>
+                        <h3>{{object.profile.birthday}}</h3>
+                        <br>
+                        <a href="{% url 'accounts:profile_update' object.profile.id %}" class="btn btn-outline-primary">Update</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
