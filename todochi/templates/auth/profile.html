@@ -13,7 +13,9 @@
                         <p>{{object.profile.bio}}</p>
                         <h3>{{object.profile.birthday}}</h3>
                         <br>
-                        <a href="{% url 'accounts:profile_update' object.profile.id %}" class="btn btn-outline-primary">Update</a>
+                        {% if object.profile.id %}
+                        <a href="{% url 'accounts:profile_update'  object.profile.id  %}" class="btn btn-outline-primary">Update</a>
+                        {% else%}None {% endif %}
                     </div>
                 </div>
             </div>

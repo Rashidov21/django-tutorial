@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
     
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    birthday = models.DateField(auto_now=False, blank=True)
+    birthday = models.DateField(auto_now=False, blank=True ,null=True)
     image = models.ImageField(upload_to='user_images/', blank=True)
     bio = models.TextField()    
     

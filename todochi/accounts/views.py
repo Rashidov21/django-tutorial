@@ -52,6 +52,7 @@ class ProfileView(LoginRequiredMixin,View):
     template_name = 'auth/profile.html'
     
     
+    
     def get(self, request):
         if request.user.is_authenticated:
             return render(request, self.template_name, {"object":request.user})
