@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'bootstrap5',
     'django_quill'
+    'rest_framework',
+    'api'
 ]
 
 MIDDLEWARE = [

@@ -23,7 +23,8 @@ urlpatterns = [
     path("", include('todo.urls'), name="todo"),
     
     path('admin/', admin.site.urls),
-    path("accounts/", include('accounts.urls', namespace='accounts'))
+    path("accounts/", include('accounts.urls', namespace='accounts')),
+    path('api/', include('api.urls', namespace='api'))
 ]
 
 
